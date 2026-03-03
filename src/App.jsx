@@ -81,6 +81,59 @@ export default function App() {
     }
   }
 
+  const fillTestData = () => {
+    setIndustry('Plumber')
+    setLocation('Portland, OR')
+    setMyBusiness({
+      name: 'Evergreen Plumbing & Heating',
+      googleReviewCount: '127',
+      googleRating: '4.7',
+      respondsToReviews: 'yes',
+      gbpPhotoCount: '24',
+      gbpPostsRecent: 'yes',
+      primaryCategory: 'Plumber',
+      hasWebsite: 'yes',
+      hasHttps: 'yes',
+      onYelp: 'yes',
+      yelpRating: '4.5',
+      yelpReviewCount: '43',
+      onFacebook: 'yes',
+      facebookRating: '4.8',
+      facebookReviewCount: '31',
+      socialMediaPresence: '3',
+      yearsInBusiness: '16',
+      servicesListed: '12',
+      onlineBooking: 'yes',
+      teamPhotos: 'yes',
+    })
+    setCompetitor1({
+      name: 'Rose City Plumbing',
+      googleReviewCount: '89',
+      googleRating: '4.4',
+      respondsToReviews: 'some',
+      gbpPhotoCount: '11',
+      gbpPostsRecent: 'no',
+      primaryCategory: 'Plumber',
+      hasWebsite: 'yes',
+      hasHttps: 'yes',
+      onYelp: 'yes',
+      yelpRating: '4.0',
+      yelpReviewCount: '28',
+      onFacebook: 'yes',
+      facebookRating: '4.2',
+      facebookReviewCount: '15',
+      socialMediaPresence: '2',
+      yearsInBusiness: '8',
+      servicesListed: '7',
+      onlineBooking: 'no',
+      teamPhotos: 'no',
+    })
+    setCompetitor2(null)
+    setShowComp2(false)
+    setShowDashboard(false)
+    setStep(0)
+  }
+
   const handleStartOver = () => {
     setStep(0)
     setIndustry('')
@@ -240,7 +293,7 @@ export default function App() {
 
   return (
     <div className="bg-abyss min-h-screen bg-glow bg-grid">
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8 sm:py-12">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4 py-8 sm:py-12">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-galactic">
           <a href="https://seo-tools-tau.vercel.app/" className="text-azure hover:text-white transition-colors">Free Tools</a>
@@ -263,6 +316,17 @@ export default function App() {
           <p className="text-cloudy text-sm sm:text-base max-w-2xl">
             Compare your local business against competitors with a guided analysis. Get industry benchmarks, a scored comparison, and a prioritized action plan to close competitive gaps.
           </p>
+        </div>
+
+        {/* Fill Test Data */}
+        <div className="flex justify-end mb-4">
+          <button
+            type="button"
+            onClick={fillTestData}
+            className="px-3 py-1.5 text-xs font-mono bg-prince/20 text-prince border border-prince/30 rounded hover:bg-prince/30 transition-colors focus:outline-none focus:ring-2 focus:ring-prince focus:ring-offset-2 focus:ring-offset-abyss"
+          >
+            Fill Test Data
+          </button>
         </div>
 
         {/* Wizard Progress */}
